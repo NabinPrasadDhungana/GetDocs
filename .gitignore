@@ -1,0 +1,178 @@
+# Gitignore for GetDocs Django project (project root)
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64
+parts/
+sdist/
+var/
+*.egg-info/
+*.egg
+installdeps/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+
+# Django: collectstatic, media, local settings
+staticfiles/
+media/
+local_settings.py
+
+# Secret keys / django secret file
+django_secret
+django_secret.py
+
+# Flask instance folder
+instance/
+
+# Scrapy
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# mypy
+.mypy_cache/
+dmypy.json
+dmypy.sock
+
+# Pyre
+.pyre/
+
+# pytype
+.pytype/
+
+# Editors and IDEs
+.vscode/
+.idea/
+*.iml
+*.iws
+
+# Sublime
+*.sublime-workspace
+*.sublime-project
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+__MACOSX/
+
+# Thumbnails
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+pnpm-lock.yaml
+
+# Build outputs
+dist/
+build/
+
+# Virtual environments
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+venv3/
+*.venv/
+
+# Local env files
+.env
+.env.*
+env.local
+venv.local
+
+# Logs
+*.log
+logs/
+
+# Coverage and reports
+htmlcov/
+reports/
+
+# Temporary and backup files
+*.tmp
+*.swp
+*.swo
+*~
+*.bak
+
+# Project metadata files
+.project
+.classpath
+.settings/
+
+# Databases
+*.sqlite3
+*.db
+
+# Secrets
+secrets.json
+secret_key.txt
+
+# Compiled static files
+*.css.map
+*.js.map
+
+# End of file
