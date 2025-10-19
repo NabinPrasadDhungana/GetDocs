@@ -12,4 +12,10 @@ class CustomUser(AbstractUser):
 
 class UserProfile(models.Model):
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
-    picture = models.ImageField(upload_to='profile', null=True, blank=True)
+    avatar = models.ImageField(upload_to='avatars/', null=True, blank=True, default='avatars/default.png')
+    bio = models.TextField(blank=True, null=True)
+    institution = models.CharField(max_length=100, blank=True, null=True)
+    
+    def __str__(self):
+        return f"{self.user.username}'s Profile"
+    
