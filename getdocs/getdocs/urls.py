@@ -23,7 +23,7 @@ import accounts, notes
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('admin/api/', include('accounts.urls')),
+    path('accounts/api/', include('accounts.urls')),
     path('notes/api/', include('notes.urls'))
 ]
 
