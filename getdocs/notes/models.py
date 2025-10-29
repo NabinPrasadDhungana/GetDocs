@@ -16,4 +16,11 @@ class Note(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='notes')
     file = models.FileField(upload_to='notes/')
     price = models.DecimalField(max_digits=8, decimal_places=2, default=0.00)
-    
+    thumbnail = models.ImageField(upload_to='thumbnails/', blank=True, null=True)
+    is_public = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    download_count = models.PositiveIntegerField(default=0)
+
+    def __str__(self):
+        return self.title
