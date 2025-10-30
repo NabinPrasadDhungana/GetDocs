@@ -15,5 +15,6 @@ class NoteSerializer(serializers.ModelSerializer):
     
     def get_uploader(self, obj):
         request = self.context.get('request')
-        return request.user if request else None
+        user = request.user if request else None
+        return user.username if user else None
     
