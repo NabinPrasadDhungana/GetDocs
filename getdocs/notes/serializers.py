@@ -7,9 +7,9 @@ class CategorySerializer(serializers.ModelSerializer):
         model = models.Category
         fields = '__all__'
 
-    def get_slug(self, obj):
-        ref = obj.name
-        return ref.lower().replace(' ', '-')
+    # def get_slug(self, obj):
+    #     ref = obj.name
+    #     return ref.lower().replace(' ', '-')
 
 class NoteSerializer(serializers.ModelSerializer):
     download_count = serializers.IntegerField(read_only=True)
