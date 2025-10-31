@@ -9,7 +9,6 @@ class CategorySerializer(serializers.ModelSerializer):
 
     def get_slug(self, obj):
         ref = obj.name
-        slug = list(ref)
         return ref.lower().replace(' ', '-')
 
 class NoteSerializer(serializers.ModelSerializer):
