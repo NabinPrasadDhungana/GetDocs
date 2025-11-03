@@ -2,7 +2,7 @@ from rest_framework import serializers
 from . import models
 
 class CategorySerializer(serializers.ModelSerializer):
-    slug = serializers.SerializerMethodField()
+    # slug = serializers.SerializerMethodField()
     class Meta:
         model = models.Category
         fields = '__all__'
