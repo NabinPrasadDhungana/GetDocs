@@ -18,3 +18,6 @@ class NoteViewSet(viewsets.ModelViewSet):
     queryset = models.Note.objects.all()
     serializer_class = serializers.NoteSerializer
     permission_classes = [IsAuthenticated]
+
+    def perform_create(self, serializer):
+        serializer.save(uploader=self.request.user)

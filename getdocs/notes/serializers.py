@@ -12,14 +12,22 @@ class CategorySerializer(serializers.ModelSerializer):
     #     return ref.lower().replace(' ', '-')
 
 class NoteSerializer(serializers.ModelSerializer):
-    download_count = serializers.IntegerField(read_only=True)
-    uploader = serializers.SerializerMethodField()
+    # download_count = serializers.IntegerField(read_only=True)
+    # uploader = serializers.HiddenField(default=serializers.CurrentUserDefault())
     class Meta:
         model = models.Note
-        fields = '__all__'
-    
-    def get_uploader(self, obj):
-        request = self.context.get('request')
-        user = request.user if request else None
-        return user.username if user else None
+        fields = [
+            'id',
+            'title',
+            'description',
+            'category',
+            'file',
+            'thumbnail',
+            'uploader',
+            'created_at',
+            'updated_at',
+            'is_public',
+            'download_count'
+        ]
+        read_only_fields = ['id', 'download_count','created_at', 'updated_at', 'uploader']
     
