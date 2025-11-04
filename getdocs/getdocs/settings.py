@@ -132,3 +132,11 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 # auth model configuration
 AUTH_USER_MODEL = 'accounts.CustomUser'
+
+# rest_framework settings
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ]
+}
