@@ -10,7 +10,7 @@ class CategoryViewSet(viewsets.ModelViewSet):
 
     def get_permissions(self):
         self.permission_classes = [AllowAny]
-        if self.request.method in ['PUT', 'PATCH', 'DELETE']:
+        if self.request.method in ['POST', 'PUT', 'PATCH', 'DELETE']:
             self.permission_classes = [IsAdminUser]
         return super().get_permissions()
 
