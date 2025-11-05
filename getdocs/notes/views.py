@@ -19,7 +19,7 @@ class CategoryViewSet(viewsets.ModelViewSet):
 class NoteViewSet(viewsets.ModelViewSet):
     queryset = models.Note.objects.all()
     serializer_class = serializers.NoteSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAnyForGet]
 
     def perform_create(self, serializer):
         serializer.save(uploader=self.request.user)
