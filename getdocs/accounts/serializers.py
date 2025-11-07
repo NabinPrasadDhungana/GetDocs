@@ -5,6 +5,10 @@ class CustomUserSerializer(serializers.ModelSerializer):
     last_login = serializers.DateTimeField(read_only=True)
     id = serializers.IntegerField(read_only=True)
     date_joined = serializers.DateTimeField(read_only=True)
+    username = serializers.CharField(required=True)
+    first_name = serializers.CharField(required=True)
+    last_name = serializers.CharField(required=True)
+    email = serializers.CharField(required=True)
     class Meta:
         model = models.CustomUser
         fields = [
