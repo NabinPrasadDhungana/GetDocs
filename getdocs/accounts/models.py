@@ -1,11 +1,20 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.core.validators import RegexValidator
 
 # Create your models here.
 class CustomUser(AbstractUser):
     # email, username, first_name, last_name, etc. are included by default
     email = models.EmailField(unique=True, blank=False, null=False)
-    username = models.CharField(max_length=150, unique=True, blank=False)
+    username = models.CharField(
+        max_length=150,
+        unique=True,
+        blank=False,
+        validators=[RegexValidator(
+            regex=r'^([a-z_][a-z0-9_]{2,9})$',
+            message='Please enter a valid username between 3 and 10 characters long. It must start with a lowercase letter (a-z) or an underscore (_), and can only contain lowercase letters, numbers, or underscores.'
+        )]
+    )
     first_name = models.CharField(max_length=150, blank=False)
     middle_name = models.CharField(max_length=150, null=True)
     last_name = models.CharField(max_length=150, blank=False)
